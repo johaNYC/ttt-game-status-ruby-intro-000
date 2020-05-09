@@ -30,7 +30,7 @@ win_index_6 = win_combo[5] #right-column
 win_index_7 = win_combo[6] #left-diagonal
 win_index_8 = win_combo[7] #right-diagonal
 
-    if board(win_index_1) && position_taken?(board, index)
+    if board(win_combo) && position_taken?(board, index)
       return win_combo
   else
     return false 
