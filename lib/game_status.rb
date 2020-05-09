@@ -29,13 +29,14 @@ win_index_5 = win_combo[4] #mid-column
 win_index_6 = win_combo[5] #right-column
 win_index_7 = win_combo[6] #left-diagonal
 win_index_8 = win_combo[7] #right-diagonal
+end
 
 if board.include?(win_combo)
   return win_combo
 else 
   return false
  end
- end
+ 
 end
 
 
