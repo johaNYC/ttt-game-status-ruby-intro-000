@@ -31,8 +31,8 @@ win_index_7 = win_combo[6] #left-diagonal
 win_index_8 = win_combo[7] #right-diagonal
 
 
-board(win_index_1) == "X" 
-  if board.include?(win_combo)
+
+  if board.all?(win_combo)
   return win_combo
 else 
   return false
