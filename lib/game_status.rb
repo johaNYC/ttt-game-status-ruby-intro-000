@@ -35,7 +35,9 @@ win_index_8 = win_combo[7] #right-diagonal
   board.include? do |win_combo|
     if win_combo == "X" 
   return win_combo
- end
+   end
+  end 
+   
  end
 end
 
