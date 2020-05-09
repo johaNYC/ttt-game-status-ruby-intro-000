@@ -19,7 +19,7 @@ board = [" "," "," "," "," "," "," "," "," "]
  ]
  
  def won?(board)
-WIN_COMBINATIONS.each do |win_combo|board.include?(win_combo)
+WIN_COMBINATIONS.each do |win_combo| win_combo.select board(win_combo)
     if win_combo == "X" 
    end
  
