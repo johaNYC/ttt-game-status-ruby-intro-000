@@ -19,7 +19,10 @@ board = [" "," "," "," "," "," "," "," "," "]
  ]
  
  def won?(board)
-WIN_COMBINATIONS.each do |win_combo|
+WIN_COMBINATIONS.each do |win_combo|board.include?(win_combo)
+    if win_combo == "X" 
+  return win_combo
+   end
  
 win_index_1 = win_combo[0] #top-row
 win_index_2 = win_combo[1] #mid-row
@@ -30,12 +33,6 @@ win_index_6 = win_combo[5] #right-column
 win_index_7 = win_combo[6] #left-diagonal
 win_index_8 = win_combo[7] #right-diagonal
 
-
-
-  {board.include?(win_combo)}
-    if win_combo == "X" 
-  return win_combo
-   end
    
  end
 end
