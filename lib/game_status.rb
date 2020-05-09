@@ -32,10 +32,9 @@ win_index_8 = win_combo[7] #right-diagonal
 
 
 
-  if board.all?(win_combo)
+  board.include? do |win_combo|
+    if win_combo == "X" 
   return win_combo
-else 
-  return false
  end
  end
 end
