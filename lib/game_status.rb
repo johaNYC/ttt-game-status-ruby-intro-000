@@ -1,6 +1,75 @@
 # Helper Method
-def position_taken?(board, index)
+ def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
 
 # Define your WIN_COMBINATIONS constant
+
+board = [" "," "," "," "," "," "," "," "," "] 
+
+ WIN_COMBINATIONS = [
+ [0,1,2], 
+ [3,4,5],
+ [6,7,8], 
+ [0,3,6],
+ [1,4,7],
+ [2,5,8],
+ [0,4,8],
+ [2,4,6]
+ ]
+ 
+ def won?(board)
+WIN_COMBINATIONS.each do |win_combo|
+ 
+win_index_1 = win_combo[0] #top-row
+win_index_2 = win_combo[1] #mid-row
+win_index_3 = win_combo[2] #bottom-row
+win_index_4 = win_combo[3] #left-column
+win_index_5 = win_combo[4] #mid-column
+win_index_6 = win_combo[5] #right-column
+win_index_7 = win_combo[6] #left-diagonal
+win_index_8 = win_combo[7] #right-diagonal
+
+if board.include?(win_combo)
+  return win_combo
+else 
+  return false
+ end
+ end
+end
+
+
+def full?(board)
+  board.all? do |win_combo| 
+    if win_combo == "X" || win_combo == "O"
+    return true
+   end
+end
+end
+
+
+
+def draw?(board)
+  if !won?(board) && full?(board) 
+   return true
+  else 
+    false
+  end
+end
+
+def over?(board)
+  if draw?(board) && (full?(board) || !full?(board))
+   return true
+  end
+end
+
+def winner?(board)
+  if won?(board) == "X" 
+    return "X"
+  elsif won?(board) == "O"
+    return "O"
+  else
+    return nil
+  end
+end
+
