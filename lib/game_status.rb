@@ -21,7 +21,6 @@ board = [" "," "," "," "," "," "," "," "," "]
  def won?(board)
 WIN_COMBINATIONS.each do |win_combo|board.include?(win_combo)
     if win_combo == "X" 
-  return win_combo
    end
  
 win_index_1 = win_combo[0] #top-row
